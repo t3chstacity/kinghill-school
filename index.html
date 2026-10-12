@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Hill School | Top-Performing & Child-Friendly School in Githurai, Kiambu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0F2C59',
+                            blue: '#1E40AF',
+                            gold: '#F59E0B',
+                            amber: '#D97706',
+                            light: '#F8FAFC',
+                            sky: '#E0F2FE'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(15, 44, 89, 0.93) 0%, rgba(30, 64, 175, 0.85) 100%), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        }
+        .pattern-overlay {
+            background-image: radial-gradient(#F59E0B 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brand-navy text-white text-xs sm:text-sm py-2 px-4 border-b border-brand-blue/30">
+        <div class="max-w-7xl mx-mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 max-w-7xl mx-auto">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-gold"></i> Mumbi, off Mwihoko Rd, Githurai, Kiambu</span>
+                <span class="hidden md:inline-block text-slate-400">|</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-universal-access text-brand-gold"></i> 100% Wheelchair Accessible</span>
+            </div>
+            <div class="flex items-center space-x-4 font-medium">
+                <a href="tel:+254727857847" class="hover:text-brand-gold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-brand-gold"></i> +254 727 857847
+                </a>
+                <a href="https://wa.me/254727857847?text=Hello%20King%20Hill%20School,%20I%20would%20like%20to%20inquire%20about%202027%20admissions." target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-2.5 py-0.5 rounded-full text-xs transition flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 bg-brand-navy text-brand-gold rounded-xl flex items-center justify-center font-black text-2xl shadow-lg group-hover:scale-105 transition-transform border-2 border-brand-gold">
+                        KH
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-extrabold text-brand-navy tracking-tight block leading-none">KING HILL</span>
+                        <span class="text-xs font-semibold text-brand-amber uppercase tracking-widest block mt-0.5">School • Kiambu</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center space-x-8 font-semibold text-slate-700">
+                    <a href="#about" class="hover:text-brand-blue transition">About Us</a>
+                    <a href="#academics" class="hover:text-brand-blue transition">Academics</a>
+                    <a href="#accessibility" class="hover:text-brand-blue transition">Accessibility & Facilities</a>
+                    <a href="#calculator" class="hover:text-brand-blue transition">Fee Estimator</a>
+                    <a href="#contact" class="hover:text-brand-blue transition">Contact</a>
+                </div>
+
+                <!-- CTA Button Desktop -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="#booking" class="bg-brand-gold hover:bg-brand-amber text-brand-navy font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Book Admission 2027
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-700 hover:text-brand-navy focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+            <a href="#about" class="block py-2 text-slate-700 font-medium hover:text-brand-blue border-b border-slate-100">About Us</a>
+            <a href="#academics" class="block py-2 text-slate-700 font-medium hover:text-brand-blue border-b border-slate-100">Academics & Values</a>
+            <a href="#accessibility" class="block py-2 text-slate-700 font-medium hover:text-brand-blue border-b border-slate-100">Facilities & Accessibility</a>
+            <a href="#calculator" class="block py-2 text-slate-700 font-medium hover:text-brand-blue border-b border-slate-100">Fee & Slot Estimator</a>
+            <a href="#contact" class="block py-2 text-slate-700 font-medium hover:text-brand-blue border-b border-slate-100">Contact Us</a>
+            <a href="#booking" class="block w-full text-center bg-brand-gold hover:bg-brand-amber text-brand-navy font-bold py-3 rounded-xl shadow-md">
+                <i class="fa-solid fa-calendar-check mr-2"></i> Book Admission 2027
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative hero-bg text-white py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 pattern-overlay"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-gold/20 text-brand-gold border border-brand-gold/40 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide backdrop-blur-sm">
+                        <i class="fa-solid fa-star text-brand-gold"></i> Admissions Open for 2027 Academic Year
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                        Nurturing <span class="text-brand-gold underline decoration-brand-amber decoration-4 underline-offset-4">Excellence</span> in Every Child
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-200 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
+                        Welcome to <strong class="font-semibold text-white">King Hill School</strong> at Mumbi, off Mwihoko Road, Githurai. We offer a safe, child-friendly, and top-performing learning environment fully accessible to every child.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#booking" class="w-full sm:w-auto bg-brand-gold hover:bg-brand-amber text-brand-navy font-extrabold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1 text-center text-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-graduation-cap"></i> Apply / Book Tour for 2027
+                        </a>
+                        <a href="tel:+254727857847" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-6 py-4 rounded-xl transition text-center backdrop-blur-md flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Call +254 727 857847
+                        </a>
+                    </div>
+
+                    <!-- Location Badge -->
+                    <div class="pt-4 flex items-center justify-center lg:justify-start gap-2 text-sm text-slate-300">
+                        <i class="fa-solid fa-map-pin text-brand-gold"></i>
+                        <span>Githurai, Kiambu County (Mumbi, off Mwihoko Road)</span>
+                    </div>
+                </div>
+
+                <!-- Hero Form Card Quick Preview / Highlight -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl border-4 border-brand-gold/30 relative">
+                        <div class="absolute -top-4 right-6 bg-brand-navy text-brand-gold font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-brand-gold">
+                            Limited Slots
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-navy mb-2">Reserve a 2027 Slot</h3>
+                        <p class="text-sm text-slate-600 mb-6">Secure your child's position in Kiambu's leading child-friendly school.</p>
+                        
+                        <form id="hero-quick-form" onsubmit="handleQuickSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Parent's Full Name</label>
+                                <input type="text" required placeholder="e.g. Mary Wanjiku" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number</label>
+                                <input type="tel" required placeholder="+254 7XX XXX XXX" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Level / Class Applying For</label>
+                                <select required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-sm text-slate-700">
+                                    <option value="">Select Level</option>
+                                    <option value="Playgroup / Daycare">Playgroup / Daycare</option>
+                                    <option value="PP1 / PP2 (Kindergarten)">PP1 / PP2 (Kindergarten)</option>
+                                    <option value="Grade 1 - Grade 3 (Lower Primary)">Grade 1 - Grade 3 (Lower Primary)</option>
+                                    <option value="Grade 4 - Grade 6 (Upper Primary)">Grade 4 - Grade 6 (Upper Primary)</option>
+                                    <option value="Junior Secondary School">Junior Secondary School (JSS)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-brand-navy hover:bg-brand-blue text-white font-bold py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2">
+                                <span>Proceed to Full Booking</span>
+                                <i class="fa-solid fa-arrow-right text-brand-gold"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS & HIGHLIGHTS BAR -->
+    <section class="bg-white py-8 border-b border-slate-200 relative z-20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-2xl bg-brand-light border border-slate-100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-navy">100%</div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Wheelchair & Disability Accessible</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-brand-light border border-slate-100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Top Tier</div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Academic Performance Rank</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-brand-light border border-slate-100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-navy">100%</div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Child-Friendly & Safe Campus</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-brand-light border border-slate-100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-navy">2027</div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Admission Bookings Open</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Image Showcase -->
+                <div class="relative">
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="King Hill School Students" class="w-full h-[420px] object-cover">
+                    </div>
+                    <!-- Badge Overlay -->
+                    <div class="absolute -bottom-6 -right-6 z-20 bg-brand-navy text-white p-6 rounded-2xl shadow-xl max-w-xs hidden sm:block border-2 border-brand-gold">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-heart text-3xl text-brand-gold"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Safe & Inclusive</h4>
+                                <p class="text-xs text-slate-300">Dedicated accessible ramps & parking lot for all pupils and visitors.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="space-y-6">
+                    <div class="inline-block bg-brand-sky text-brand-blue font-bold px-3 py-1 rounded-md text-xs uppercase tracking-wider">
+                        About King Hill School
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-brand-navy leading-tight">
+                        A Safe Haven Where Every Child Discovers Their Full Potential
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Situated at <strong>Mumbi, off Mwihoko Road, Githurai (Kiambu County)</strong>, King Hill School was established with a singular vision: to cultivate a top-performing academic environment integrated with compassionate, child-centered care.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        We believe that physical accessibility is fundamental to quality education. Our campus boasts a completely <strong>wheelchair-accessible entrance, accessible parking spaces, and ramp-assisted pathways</strong>, ensuring every child and parent experiences dignity and convenience.
+                    </p>
+
+                    <!-- Core Pillars Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200">
+                            <div class="w-10 h-10 bg-brand-sky text-brand-blue rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-brain text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">Academic Rigor</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">CBC Curriculum aligned with individual mentoring.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200">
+                            <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-child-reaching text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">Child Safety First</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">24/7 security & child-friendly recreational spaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMICS & FEATURES -->
+    <section id="academics" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-brand-sky text-brand-blue font-bold px-3.5 py-1 rounded-full text-xs uppercase tracking-wider">Why Choose King Hill School</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-3">Designed for Holistic Pupil Growth</h2>
+                <p class="text-slate-600 mt-3 text-base">We combine modern pedagogical methods with character building in an inclusive physical setup.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-brand-light p-8 rounded-2xl border border-slate-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">Top-Performing Standards</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Consistent track record of academic excellence through personalized instruction, small class sizes, and skilled educators.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brand-light p-8 rounded-2xl border border-slate-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wheelchair"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">100% Inclusive & Accessible</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dedicated wheelchair ramps at all building entries, wide hallways, and reserved accessible parking directly at our main gate.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brand-light p-8 rounded-2xl border border-slate-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shapes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">Child-Centered Facilities</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Safe playgrounds, colorful learning environments, and engaging modern learning aids tailored for early childhood development.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-brand-light p-8 rounded-2xl border border-slate-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">Safe School Transport</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Reliable school bus routes covering Githurai, Mwihoko Road, Mumbi area, and surrounding Kiambu neighborhoods.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-brand-light p-8 rounded-2xl border border-slate-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">Computer & STEM Literacy</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Practical digital skills training for young learners to prepare them for an increasingly technology-driven world.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-brand-light p-8 rounded-2xl border border-slate-200 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">Nurturing Pastoral Care</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Every learner is valued. We build character, spiritual growth, and social responsibility in a warm, welcoming community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCESSIBILITY & FACILITIES SECTION -->
+    <section id="accessibility" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Accessibility & Infrastructure</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Built for Universal Access</h2>
+                </div>
+                <p class="text-slate-400 max-w-md mt-4 md:mt-0 text-sm">
+                    We believe physical barriers should never limit a child's education or a parent's ability to participate in their growth.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Facility Item 1 -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 hover:border-brand-gold transition">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Accessible Parking Lot</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Wide, clearly marked wheelchair-accessible parking bays situated directly next to the main school administrative entrance.
+                    </p>
+                </div>
+
+                <!-- Facility Item 2 -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 hover:border-brand-gold transition">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-person-walking-with-cane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Gentle Inclination Ramps</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Smooth, slip-resistant ramp accesses to all primary classrooms, administration blocks, dining areas, and restrooms.
+                    </p>
+                </div>
+
+                <!-- Facility Item 3 -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 hover:border-brand-gold transition">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Safe & Child-Proof Grounds</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Enclosed perimeter wall, 24/7 security officers, soft-impact play zones, and strict visitor verification protocols.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FEE & SLOT ESTIMATOR TOOL -->
+    <section id="calculator" class="py-20 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-10">
+                <div class="text-center mb-8">
+                    <span class="bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Interactive Planning Tool</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-navy mt-2">2027 Admission & Slot Estimator</h2>
+                    <p class="text-slate-600 text-sm mt-1">Select your child's grade level to check slot availability and estimate tuition guidelines.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Select Grade Level</label>
+                            <select id="calc-grade" onchange="calculateEstimate()" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800 font-medium">
+                                <option value="playgroup">Daycare / Playgroup (Ages 2-3)</option>
+                                <option value="kindergarten">PP1 & PP2 Kindergarten (Ages 4-5)</option>
+                                <option value="lower">Lower Primary (Grade 1 - 3)</option>
+                                <option value="upper">Upper Primary (Grade 4 - 6)</option>
+                                <option value="jss">Junior Secondary School (Grade 7 - 9)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">School Transport Needed?</label>
+                            <select id="calc-transport" onchange="calculateEstimate()" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800 font-medium">
+                                <option value="no">No - Self Drop/Pickup</option>
+                                <option value="githurai">Yes - Githurai / Mumbi Route</option>
+                                <option value="mwihoko">Yes - Mwihoko / Outer Route</option>
+                            </select>
+                        </div>
+
+                        <div class="p-4 bg-brand-sky/50 rounded-xl border border-brand-sky">
+                            <p class="text-xs text-brand-navy flex items-center gap-2">
+                                <i class="fa-solid fa-circle-info text-brand-blue"></i>
+                                <span>Discounts available for siblings and early 2027 registrations!</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Output Card -->
+                    <div class="bg-brand-navy text-white p-6 rounded-2xl shadow-md border-2 border-brand-gold text-center space-y-4">
+                        <div class="text-xs font-semibold text-brand-gold uppercase tracking-wider">Estimated Termly Fee Guide</div>
+                        <div id="calc-result-fee" class="text-4xl font-extrabold text-white">
+                            KES 18,500
+                        </div>
+                        <div class="text-xs text-slate-300">
+                            Status: <span id="calc-result-status" class="text-green-400 font-bold">2027 Slots Available</span>
+                        </div>
+                        <hr class="border-slate-700">
+                        <a href="#booking" onclick="prefillBookingFromCalc()" class="inline-block w-full bg-brand-gold hover:bg-brand-amber text-brand-navy font-bold py-3 rounded-xl transition text-sm">
+                            Lock in Your Slot for 2027
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMISSION & TOUR BOOKING FORM SECTION -->
+    <section id="booking" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="bg-brand-sky text-brand-blue font-bold px-3.5 py-1 rounded-full text-xs uppercase tracking-wider">Official Application & Tour Booking</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-3">Book Your 2027 Admission or Campus Tour</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Fill in the form below and our admissions office will contact you within 24 hours.</p>
+            </div>
+
+            <form id="main-booking-form" onsubmit="handleMainSubmit(event)" class="bg-brand-light p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-xl space-y-6">
+                
+                <!-- Parent Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Parent / Guardian Name *</label>
+                        <input type="text" id="parent_name" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number (WhatsApp preferred) *</label>
+                        <input type="tel" id="parent_phone" required placeholder="+254 722 000 000" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address (Optional)</label>
+                        <input type="email" id="parent_email" placeholder="parent@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Child's Full Name *</label>
+                        <input type="text" id="child_name" required placeholder="Child's Name" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800">
+                    </div>
+                </div>
+
+                <!-- Admission Details -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Grade / Level Applying For *</label>
+                        <select id="booking_grade" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800">
+                            <option value="">Select Level</option>
+                            <option value="Playgroup / Daycare">Playgroup / Daycare</option>
+                            <option value="PP1 / PP2 Kindergarten">PP1 / PP2 Kindergarten</option>
+                            <option value="Lower Primary (Grade 1-3)">Lower Primary (Grade 1-3)</option>
+                            <option value="Upper Primary (Grade 4-6)">Upper Primary (Grade 4-6)</option>
+                            <option value="Junior Secondary (Grade 7-9)">Junior Secondary (JSS)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Preferred Action *</label>
+                        <select id="booking_type" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800">
+                            <option value="Reserve 2027 Admission Slot">Reserve 2027 Admission Slot</option>
+                            <option value="Schedule Physical School Tour">Schedule Physical School Tour</option>
+                            <option value="Both Tour & Admission Inquiry">Both Tour & Admission Inquiry</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Special Requirements / Wheelchair Support Needed?</label>
+                    <textarea id="booking_notes" rows="3" placeholder="Please let us know if your child or family requires wheelchair accessibility assistance or any specific learning requirements..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-slate-800"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-gold hover:bg-brand-amber text-brand-navy font-black py-4 rounded-xl shadow-lg transition text-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Booking / Application Request
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-brand-sky text-brand-blue font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Parent Feedback</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-3">What Our School Community Says</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-brand-gold flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "King Hill School has transformed my son's enthusiasm for learning. The teachers are incredibly attentive, and the child-friendly atmosphere is noticeable from the day you step in."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <h4 class="font-bold text-brand-navy text-sm">Grace W.</h4>
+                        <p class="text-xs text-slate-400">Parent (PP2 & Grade 2)</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-brand-gold flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "As a parent using a wheelchair, visiting schools used to be stressful. King Hill School's wheelchair-accessible parking and smooth ramps made visiting and picking up my child effortless."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <h4 class="font-bold text-brand-navy text-sm">David M.</h4>
+                        <p class="text-xs text-slate-400">Parent (Grade 4)</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-brand-gold flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Top academic performance with deep moral grounding. The location off Mwihoko Road is very convenient and safe for school bus drops."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <h4 class="font-bold text-brand-navy text-sm">Faith N.</h4>
+                        <p class="text-xs text-slate-400">Parent (JSS Grade 7)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION SECTION -->
+    <section id="contact" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="bg-brand-sky text-brand-blue font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Get In Touch</span>
+                        <h2 class="text-3xl font-extrabold text-brand-navy mt-3">Visit or Contact King Hill School</h2>
+                        <p class="text-slate-600 text-sm mt-2">We are always ready to welcome parents and answer all admission inquiries.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">Physical Address</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">Mumbi, off Mwihoko Road, Githurai<br>Kiambu County, Kenya</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">Direct Phone Inquiry</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">
+                                    <a href="tel:+254727857847" class="hover:text-brand-blue font-semibold">+254 727 857847</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-universal-access"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">Accessibility Facilities</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">Wheelchair-accessible entrance and reserved parking lot available on site.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-navy text-brand-gold rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy text-sm">Office Hours</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">Monday – Friday: 7:00 AM – 5:00 PM<br>Saturday: 8:00 AM – 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Action Buttons -->
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <a href="tel:+254727857847" class="bg-brand-navy text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-brand-blue transition flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-brand-gold"></i> Call School Office
+                        </a>
+                        <a href="https://wa.me/254727857847?text=Hello%20King%20Hill%20School,%20I%20would%20like%20to%20inquire%20about%202027%20admissions." target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder / Interactive Graphic -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-100 rounded-3xl overflow-hidden h-full min-h-[380px] border border-slate-200 relative flex flex-col items-center justify-center p-8 text-center shadow-inner">
+                        <div class="w-20 h-20 bg-brand-navy text-brand-gold rounded-full flex items-center justify-center text-3xl mb-4 shadow-lg">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy">King Hill School Location</h3>
+                        <p class="text-slate-600 text-sm mt-1 max-w-md">Located at Mumbi, off Mwihoko Road, Githurai, Kiambu County.</p>
+                        <div class="mt-6 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow border border-slate-200 text-xs font-semibold text-slate-700">
+                            <i class="fa-solid fa-circle-check text-green-500"></i> Easy access via Mwihoko Road with accessible parking
+                        </div>
+                        <!-- Simulated Map Pin Graphic -->
+                        <div class="w-full mt-6 h-48 bg-slate-200 rounded-xl relative overflow-hidden flex items-center justify-center border border-slate-300">
+                            <div class="text-center space-y-2">
+                                <i class="fa-solid fa-location-pin text-4xl text-red-600 animate-bounce"></i>
+                                <div class="bg-white px-3 py-1 rounded shadow text-xs font-bold text-brand-navy">
+                                    King Hill School - Mumbi, Githurai
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-navy text-white py-12 border-t-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-brand-gold text-brand-navy font-black text-xl rounded-lg flex items-center justify-center">KH</div>
+                        <span class="text-xl font-extrabold tracking-tight">KING HILL SCHOOL</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        A top-performing, child-friendly learning environment in Githurai, Kiambu County. Committed to inclusive education for every learner.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-sm font-bold text-brand-gold uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#about" class="hover:text-white transition">About Our School</a></li>
+                        <li><a href="#academics" class="hover:text-white transition">Academics & Values</a></li>
+                        <li><a href="#accessibility" class="hover:text-white transition">Wheelchair Accessibility</a></li>
+                        <li><a href="#calculator" class="hover:text-white transition">2027 Fee Estimator</a></li>
+                        <li><a href="#booking" class="hover:text-white transition">Book School Tour</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-sm font-bold text-brand-gold uppercase tracking-wider mb-4">Admissions</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#booking" class="hover:text-white transition">2027 Entry Applications</a></li>
+                        <li><a href="#booking" class="hover:text-white transition">Daycare & Playgroup</a></li>
+                        <li><a href="#booking" class="hover:text-white transition">Kindergarten (PP1/PP2)</a></li>
+                        <li><a href="#booking" class="hover:text-white transition">Primary School</a></li>
+                        <li><a href="#booking" class="hover:text-white transition">Junior Secondary School</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-sm font-bold text-brand-gold uppercase tracking-wider mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><i class="fa-solid fa-location-dot text-brand-gold mr-2"></i> Mumbi, off Mwihoko Rd, Githurai</li>
+                        <li><i class="fa-solid fa-map-pin text-brand-gold mr-2"></i> Kiambu County, Kenya</li>
+                        <li><i class="fa-solid fa-phone text-brand-gold mr-2"></i> +254 727 857847</li>
+                        <li><i class="fa-solid fa-universal-access text-brand-gold mr-2"></i> Wheelchair Access Onsite</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <span id="year">2027</span> King Hill School. All Rights Reserved.</p>
+                <p class="text-slate-400">Child-Friendly & Accessibility Certified Campus</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SUCCESS CONFIRMATION MODAL -->
+    <div id="confirmation-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl border-4 border-brand-gold text-center space-y-4">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-3xl mx-auto">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy">Booking Received!</h3>
+            <p class="text-sm text-slate-600 leading-relaxed" id="modal-message">
+                Thank you for reaching out to <strong>King Hill School</strong>. Our admissions office will contact you on <span id="modal-phone" class="font-bold text-slate-800"></span> shortly to confirm your 2027 booking details.
+            </p>
+            <button onclick="closeModal()" class="w-full bg-brand-navy hover:bg-brand-blue text-white font-bold py-3 rounded-xl transition">
+                Back to Home
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        // Close mobile menu on clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            });
+        });
+
+        // Interactive Fee Calculator Logic
+        const feeTable = {
+            playgroup: { base: 16500, status: '2027 Slots Available' },
+            kindergarten: { base: 18500, status: 'High Demand for 2027' },
+            lower: { base: 21000, status: '2027 Open' },
+            upper: { base: 23500, status: '2027 Open' },
+            jss: { base: 26000, status: 'Limited 2027 Slots' }
+        };
+
+        const transportTable = {
+            no: 0,
+            githurai: 3500,
+            mwihoko: 4500
+        };
+
+        function calculateEstimate() {
+            const grade = document.getElementById('calc-grade').value;
+            const transport = document.getElementById('calc-transport').value;
+            
+            const baseFee = feeTable[grade].base;
+            const transportFee = transportTable[transport];
+            const total = baseFee + transportFee;
+
+            document.getElementById('calc-result-fee').textContent = 'KES ' + total.toLocaleString();
+            document.getElementById('calc-result-status').textContent = feeTable[grade].status;
+        }
+
+        function prefillBookingFromCalc() {
+            const selectedGradeText = document.getElementById('calc-grade').options[document.getElementById('calc-grade').selectedIndex].text;
+            const bookingGradeSelect = document.getElementById('booking_grade');
+            
+            for (let i = 0; i < bookingGradeSelect.options.length; i++) {
+                if (bookingGradeSelect.options[i].text.toLowerCase().includes(selectedGradeText.split(' ')[0].toLowerCase())) {
+                    bookingGradeSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Quick Form Submission Handler
+        function handleQuickSubmit(e) {
+            e.preventDefault();
+            const inputs = e.target.querySelectorAll('input');
+            const parentName = inputs[0].value;
+            const phone = inputs[1].value;
+
+            // Prefill main booking form
+            document.getElementById('parent_name').value = parentName;
+            document.getElementById('parent_phone').value = phone;
+
+            // Scroll smoothly to main form
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Main Booking Submission Handler
+        function handleMainSubmit(e) {
+            e.preventDefault();
+            const phone = document.getElementById('parent_phone').value;
+            const parentName = document.getElementById('parent_name').value;
+
+            document.getElementById('modal-phone').textContent = phone;
+            document.getElementById('confirmation-modal').classList.remove('hidden');
+
+            // Reset form
+            document.getElementById('main-booking-form').reset();
+        }
+
+        function closeModal() {
+            document.getElementById('confirmation-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
